@@ -5,10 +5,11 @@ function Process() {
   return (
     <section
       id="processo"
-      className="scroll-mt-32 relative overflow-hidden bg-[linear-gradient(180deg,#111111_0%,#23252B_4%,#6C7480_8%,#D4DCE6_12%,#F5F5F7_16%,#F5F5F7_100%)] py-20 md:py-24"
+      className="scroll-mt-32 relative overflow-hidden bg-[#F5F5F7] py-20 md:py-24"
     >
-      <div className="absolute inset-0">
-        <div className="absolute right-[10%] top-0 h-64 w-64 rounded-full bg-[#4B34FF]/8 blur-[90px]" />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F5F5F7] via-[#F5F5F7]/90 to-transparent" />
+        <div className="absolute right-[10%] top-14 h-64 w-64 rounded-full bg-[#4B34FF]/7 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto grid w-[min(1160px,calc(100%-32px))] gap-12 md:grid-cols-[0.9fr_1.1fr]">

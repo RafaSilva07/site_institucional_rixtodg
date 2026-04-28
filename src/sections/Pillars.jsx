@@ -3,10 +3,12 @@ import { pillars } from '../data/siteData'
 
 function Pillars() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#F5F5F7_0%,#DEE4EC_4%,#616775_8%,#1B1C21_12%,#111111_16%,#111111_100%)] py-20 text-white md:py-24">
-      <div className="absolute inset-0">
-        <div className="absolute left-[8%] top-12 h-72 w-72 rounded-full bg-[#4B34FF]/14 blur-[95px]" />
-        <div className="absolute right-[8%] bottom-0 h-72 w-72 rounded-full bg-[#20B8FF]/10 blur-[95px]" />
+    <section className="relative overflow-hidden bg-[#111111] py-20 text-white md:py-24">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#111111] via-[#111111]/92 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#111111] via-[#111111]/92 to-transparent" />
+        <div className="absolute left-[8%] top-16 h-72 w-72 rounded-full bg-[#4B34FF]/12 blur-[105px]" />
+        <div className="absolute right-[8%] bottom-8 h-72 w-72 rounded-full bg-[#20B8FF]/8 blur-[105px]" />
       </div>
 
       <div className="relative mx-auto w-[min(1160px,calc(100%-32px))] rounded-[2rem] bg-[#111111]/90 px-0 py-4 md:px-4">
