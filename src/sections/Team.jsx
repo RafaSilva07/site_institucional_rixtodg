@@ -5,12 +5,14 @@ function Team() {
   return (
     <section
       id="equipe"
-      className="scroll-mt-32 relative overflow-hidden bg-[linear-gradient(180deg,#111111_0%,#23252B_4%,#6B7381_8%,#D6DDE8_12%,#F7F8FC_16%,#F7F8FC_100%)] py-20 md:py-24"
+      className="scroll-mt-32 relative overflow-hidden bg-[#F7F8FC] py-20 md:py-24"
     >
-      <div className="absolute inset-0">
-        <div className="absolute left-[-80px] top-20 h-80 w-80 rounded-full bg-[#6A1BFF]/22 blur-[105px]" />
-        <div className="absolute right-[-100px] bottom-10 h-80 w-80 rounded-full bg-[#20B8FF]/12 blur-[105px]" />
-        <div className="absolute left-[45%] top-[35%] h-64 w-64 rounded-full bg-[#4B34FF]/12 blur-[95px]" />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F7F8FC] via-[#F7F8FC]/90 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F7F8FC] via-[#F7F8FC]/90 to-transparent" />
+        <div className="absolute left-[-60px] top-24 h-80 w-80 rounded-full bg-[#6A1BFF]/18 blur-[110px]" />
+        <div className="absolute right-[-80px] bottom-16 h-80 w-80 rounded-full bg-[#20B8FF]/10 blur-[110px]" />
+        <div className="absolute left-[45%] top-[38%] h-64 w-64 rounded-full bg-[#4B34FF]/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto w-[min(1160px,calc(100%-32px))]">

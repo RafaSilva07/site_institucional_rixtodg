@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import SectionDivider from './components/SectionDivider'
 import SectionReveal from './components/SectionReveal'
 
 import Hero from './sections/Hero'
@@ -16,26 +17,32 @@ function App() {
       <Header />
 
       <Hero />
+      <SectionDivider variant="lightToDark" />
 
       <SectionReveal>
         <About />
       </SectionReveal>
+      <SectionDivider variant="darkToLight" />
 
       <SectionReveal>
         <Team />
       </SectionReveal>
+      <SectionDivider variant="lightToDark" />
 
       <SectionReveal>
         <Services />
       </SectionReveal>
+      <SectionDivider variant="darkToLight" />
 
       <SectionReveal>
         <Process />
       </SectionReveal>
+      <SectionDivider variant="lightToDark" />
 
       <SectionReveal>
         <Pillars />
       </SectionReveal>
+      <SectionDivider variant="darkToLight" />
 
       <SectionReveal>
         <FinalCTA />
