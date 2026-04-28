@@ -1,16 +1,51 @@
-# React + Vite
+# Rixto Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional da Rixto Digital, desenvolvido para apresentar a empresa, seus servicos, sua equipe, o processo de trabalho e os canais de contato.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto foi criado como uma landing page institucional com foco em:
 
-## React Compiler
+- apresentacao profissional da marca
+- clareza sobre os servicos oferecidos
+- navegacao simples entre as secoes
+- incentivo ao contato direto pelo WhatsApp
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Como foi feito
 
-## Expanding the ESLint configuration
+O site foi desenvolvido com:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- Tailwind CSS
+
+A estrutura foi organizada de forma modular dentro de `src`, separando:
+
+- `components`: componentes reutilizaveis da interface
+- `sections`: secoes principais da pagina
+- `data`: dados centralizados do site
+- `hooks`: hooks React para comportamentos reutilizaveis
+
+## Como rodar o projeto
+
+Instale as dependencias:
+
+```bash
+npm install
+```
+
+Inicie o ambiente de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Para gerar a versao de producao:
+
+```bash
+npm run build
+```
+
+## Objetivo
+
+O objetivo deste projeto e servir como base para o site oficial da Rixto Digital, mantendo uma estrutura limpa, moderna e facil de evoluir.
