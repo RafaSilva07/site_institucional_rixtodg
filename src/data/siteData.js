@@ -5,6 +5,7 @@ export const navItems = [
   { id: 'sobre', label: 'Sobre' },
   { id: 'equipe', label: 'Quem somos' },
   { id: 'servicos', label: 'Servicos' },
+  { id: 'projetos', label: 'Projetos' },
   { id: 'processo', label: 'Processo' },
 ]
 
@@ -45,6 +46,33 @@ export const services = [
     number: '04',
     title: 'Estrutura comercial',
     text: 'Organizamos a forma como sua empresa apresenta sua oferta no digital, deixando mais claro o que voce vende, para quem vende e como o cliente pode falar com voce.',
+  },
+]
+
+export const projects = [
+  {
+    name: 'Rixto Digital',
+    type: 'Site institucional',
+    description:
+      'Site institucional criado para apresentar a Rixto Digital, seus serviços, posicionamento e formas de contato com uma estética moderna, profissional e alinhada à identidade da marca.',
+    image: '/projects/rixtodg.png',
+    url: 'https://rixtodigital.vercel.app/',
+  },
+  {
+    name: 'Cliente Modelo Rixto',
+    type: 'Landing page',
+    description:
+      'Landing page criada para apresentar a condição especial de cliente modelo da Rixto Digital, destacando benefícios, oferta inicial e chamada para conversão.',
+    image: '/projects/RIXTOCLIENTESMODELOS.png',
+    url: 'https://clientemodelorixto.vercel.app',
+  },
+  {
+    name: 'Churrascaria Gaúcha Orizona',
+    type: 'Site institucional',
+    description:
+      'Site institucional desenvolvido para apresentar a churrascaria, destacar seus diferenciais, facilitar o contato e fortalecer a credibilidade do estabelecimento.',
+    image: '/projects/churrascaria.png',
+    url: 'https://churrascariagauchaozn.vercel.app',
   },
 ]
 
