@@ -51,12 +51,12 @@ export const services = [
 
 export const projects = [
   {
-    name: 'Rixto Digital',
+    name: 'Lunare Semijoias',
     type: 'Site institucional',
     description:
-      'Site institucional criado para apresentar a Rixto Digital, seus serviços, posicionamento e formas de contato com uma estética moderna, profissional e alinhada à identidade da marca.',
-    image: '/projects/rixtodg.png',
-    url: 'https://rixtodigital.vercel.app/',
+      'Site institucional desenvolvido para apresentar a marca Lunare Semijoias, destacar suas peças, diferenciais, garantia e facilitar o contato com clientes pelo WhatsApp.',
+    image: '/projects/lunare.png',
+    url: 'https://lunaresemijoias.vercel.app/',
   },
   {
     name: 'Cliente Modelo Rixto',
