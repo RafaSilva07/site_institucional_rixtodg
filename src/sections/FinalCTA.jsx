@@ -11,7 +11,7 @@ function FinalCTA() {
 
       <div
         data-reveal="right"
-        className="relative mx-auto rounded-[2rem] bg-white/88 p-5 shadow-[0_24px_80px_rgba(17,17,17,0.07)] backdrop-blur md:w-[min(1160px,calc(100%-32px))] md:p-8"
+        className="relative mx-auto w-[min(1160px,calc(100%-32px))] rounded-[2rem] bg-white/88 p-5 shadow-[0_24px_80px_rgba(17,17,17,0.07)] backdrop-blur md:p-8"
       >
         <div className="rounded-[1.5rem] bg-[#111111] px-6 py-14 text-center text-white md:px-12 md:py-20">
           <Label light>Próximo passo</Label>
