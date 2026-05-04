@@ -12,17 +12,19 @@ function Hero() {
       <div className="absolute left-[42%] top-[18%] h-72 w-72 rounded-full bg-[#4B34FF]/10 blur-[105px]" />
 
       <div className="relative mx-auto grid w-[min(1160px,calc(100%-32px))] gap-10 py-16 md:grid-cols-[1.08fr_0.92fr] md:items-center md:py-24 lg:py-28">
-        <div>
+        <div className="min-w-0">
           <div className="hero-reveal hero-reveal-left">
             <Label>Rixto Digital</Label>
           </div>
 
           <h1
-            className="hero-reveal hero-reveal-left mt-6 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#111111] sm:text-5xl md:text-7xl"
+            className="hero-reveal hero-reveal-left mt-6 max-w-4xl text-[1.95rem] font-semibold leading-[1.06] tracking-[-0.035em] text-[#111111] sm:text-5xl sm:tracking-[-0.055em] md:text-7xl"
             style={{ '--reveal-delay': '80ms' }}
           >
-            Sites profissionais e tráfego pago para empresas que querem vender
-            com mais credibilidade.
+            <span className="block sm:inline">Sites profissionais e</span>{' '}
+            <span className="block sm:inline">tráfego pago para empresas</span>{' '}
+            <span className="block sm:inline">que querem vender com</span>{' '}
+            <span className="block sm:inline">mais credibilidade.</span>
           </h1>
 
           <p
@@ -56,7 +58,7 @@ function Hero() {
         </div>
 
         <div
-          className="hero-reveal hero-reveal-right rounded-[2rem] border border-white/70 bg-white/78 p-5 shadow-[0_24px_90px_rgba(75,52,255,0.12)] backdrop-blur-xl md:p-8"
+          className="hero-reveal hero-reveal-right min-w-0 rounded-[2rem] border border-white/70 bg-white/78 p-5 shadow-[0_24px_90px_rgba(75,52,255,0.12)] backdrop-blur-xl md:p-8"
           style={{ '--reveal-delay': '180ms' }}
         >
           <div className="rounded-[1.5rem] bg-[#111111] p-7 text-white">
