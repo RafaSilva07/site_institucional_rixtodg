@@ -24,6 +24,13 @@ export const team = [
     description:
       'Responsável pelo planejamento e gestão das campanhas de tráfego pago. Atua na criação de estratégias para atrair pessoas com interesse real nos produtos ou serviços da empresa e direcioná-las para o canal certo de contato.',
   },
+  {
+    name: 'João Victor Fernandes',
+    role: 'Comunicação e vendas',
+    initials: 'JF',
+    description:
+      'Responsável pela comunicação comercial e pelo relacionamento com possíveis clientes. Atua na apresentação das soluções da Rixto, entendimento das necessidades do negócio e condução das conversas até a proposta ideal.',
+  },
 ]
 
 export const services = [

@@ -31,7 +31,7 @@ function Team() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {team.map((person, index) => (
             <article
               key={person.name}
