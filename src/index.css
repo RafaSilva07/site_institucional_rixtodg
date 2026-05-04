@@ -16,9 +16,168 @@ html {
 body {
   margin: 0;
   background: #f5f5f7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: #4b34ff;
   color: white;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(32, 184, 255, 0.78);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.reveal-scope [data-reveal],
+.hero-reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 720ms ease,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-scope [data-reveal='left'] {
+  transform: translate3d(-56px, 0, 0);
+}
+
+.reveal-scope [data-reveal='right'] {
+  transform: translate3d(56px, 0, 0);
+}
+
+.reveal-scope [data-reveal='scale'] {
+  transform: translate3d(0, 18px, 0) scale(0.97);
+}
+
+.reveal-visible [data-reveal],
+.hero-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.hero-reveal {
+  animation: hero-reveal 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.hero-reveal-left {
+  animation-name: hero-reveal-left;
+}
+
+.hero-reveal-right {
+  animation-name: hero-reveal-right;
+}
+
+.reveal-visible [data-reveal]:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-reveal-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-48px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-reveal-right {
+  from {
+    opacity: 0;
+    transform: translate3d(48px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .reveal-scope [data-reveal],
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .reveal-scope [data-reveal='left'] {
+    transform: translate3d(-34px, 0, 0);
+  }
+
+  .reveal-scope [data-reveal='right'] {
+    transform: translate3d(34px, 0, 0);
+  }
+
+  @keyframes hero-reveal-left {
+    from {
+      opacity: 0;
+      transform: translate3d(-30px, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes hero-reveal-right {
+    from {
+      opacity: 0;
+      transform: translate3d(30px, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-scope [data-reveal],
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

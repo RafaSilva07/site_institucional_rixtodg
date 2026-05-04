@@ -5,52 +5,31 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState(navItems[0].id)
 
   useEffect(() => {
-    const getCurrentSection = () => {
-      const offset = 160
-      const sections = navItems
-        .map((item) => document.getElementById(item.id))
-        .filter(Boolean)
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean)
 
-      const sectionInView = sections.find((section) => {
-        const top = section.offsetTop - offset
-        const bottom = top + section.offsetHeight
+    if (!sections.length) return
 
-        return window.scrollY >= top && window.scrollY < bottom
-      })
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
 
-      if (sectionInView) {
-        return sectionInView.id
-      }
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id)
+        }
+      },
+      {
+        rootMargin: '-30% 0px -55% 0px',
+        threshold: [0.08, 0.18, 0.32],
+      },
+    )
 
-      const closestSection = sections.reduce(
-        (closest, section) => {
-          const distance = Math.abs(section.getBoundingClientRect().top - offset)
+    sections.forEach((section) => observer.observe(section))
 
-          if (distance < closest.distance) {
-            return { id: section.id, distance }
-          }
-
-          return closest
-        },
-        { id: navItems[0].id, distance: Number.POSITIVE_INFINITY },
-      )
-
-      return closestSection.id
-    }
-
-    const updateActiveSection = () => {
-      setActiveSection(getCurrentSection())
-    }
-
-    updateActiveSection()
-
-    window.addEventListener('scroll', updateActiveSection, { passive: true })
-    window.addEventListener('resize', updateActiveSection)
-
-    return () => {
-      window.removeEventListener('scroll', updateActiveSection)
-      window.removeEventListener('resize', updateActiveSection)
-    }
+    return () => observer.disconnect()
   }, [])
 
   return {

@@ -1,13 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 
-function SectionReveal({ children }) {
+function prefersReducedMotion() {
+  return (
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+}
+
+function SectionReveal({ children, className = '' }) {
   const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(prefersReducedMotion)
 
   useEffect(() => {
     const element = ref.current
 
-    if (!element) return
+    if (!element || visible) {
+      return
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -17,21 +26,20 @@ function SectionReveal({ children }) {
         }
       },
       {
-        threshold: 0.1,
+        rootMargin: '0px 0px -12% 0px',
+        threshold: 0.12,
       },
     )
 
     observer.observe(element)
 
     return () => observer.disconnect()
-  }, [])
+  }, [visible])
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}
+      className={`reveal-scope ${visible ? 'reveal-visible' : ''} ${className}`}
     >
       {children}
     </div>

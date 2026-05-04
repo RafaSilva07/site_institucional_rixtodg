@@ -13,7 +13,7 @@ function Process() {
       </div>
 
       <div className="relative mx-auto grid w-[min(1160px,calc(100%-32px))] gap-12 md:grid-cols-[0.9fr_1.1fr]">
-        <div>
+        <div data-reveal="left">
           <Label>Como trabalhamos</Label>
 
           <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.055em] sm:text-4xl md:text-6xl">
@@ -31,6 +31,8 @@ function Process() {
           {steps.map((step, index) => (
             <div
               key={step}
+              data-reveal="right"
+              style={{ '--reveal-delay': `${120 + index * 80}ms` }}
               className="flex gap-5 rounded-3xl border border-white/60 bg-white/75 p-5 shadow-[0_16px_50px_rgba(17,17,17,0.045)] backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(17,17,17,0.06)]"
             >
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[#F2F4F8] text-sm font-bold text-[#4B34FF]">

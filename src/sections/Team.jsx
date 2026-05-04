@@ -10,13 +10,13 @@ function Team() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F7F8FC] via-[#F7F8FC]/90 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F7F8FC] via-[#F7F8FC]/90 to-transparent" />
-        <div className="absolute left-[-60px] top-24 h-80 w-80 rounded-full bg-[#6A1BFF]/18 blur-[110px]" />
-        <div className="absolute right-[-80px] bottom-16 h-80 w-80 rounded-full bg-[#20B8FF]/10 blur-[110px]" />
-        <div className="absolute left-[45%] top-[38%] h-64 w-64 rounded-full bg-[#4B34FF]/10 blur-[100px]" />
+        <div className="absolute left-[-60px] top-24 h-80 w-80 rounded-full bg-[#6A1BFF]/16 blur-[110px]" />
+        <div className="absolute right-[-80px] bottom-16 h-80 w-80 rounded-full bg-[#20B8FF]/9 blur-[110px]" />
+        <div className="absolute left-[45%] top-[38%] h-64 w-64 rounded-full bg-[#4B34FF]/8 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto w-[min(1160px,calc(100%-32px))]">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl" data-reveal="left">
           <Label>Quem está por trás</Label>
 
           <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.055em] sm:text-4xl md:text-6xl">
@@ -32,9 +32,11 @@ function Team() {
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {team.map((person) => (
+          {team.map((person, index) => (
             <article
               key={person.name}
+              data-reveal={index % 2 === 0 ? 'left' : 'right'}
+              style={{ '--reveal-delay': `${120 + index * 90}ms` }}
               className="group rounded-[1.8rem] border border-white/70 bg-white/78 p-7 shadow-[0_22px_80px_rgba(75,52,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_26px_90px_rgba(75,52,255,0.14)]"
             >
               <div className="flex flex-col gap-6 sm:flex-row">
