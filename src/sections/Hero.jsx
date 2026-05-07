@@ -1,5 +1,6 @@
 import Label from '../components/Label'
 import InfoRow from '../components/InfoRow'
+import BorderBeam from '../components/BorderBeam'
 import { whatsappLink } from '../data/siteData'
 
 function Hero() {
@@ -61,12 +62,19 @@ function Hero() {
           className="hero-reveal hero-reveal-right min-w-0 rounded-[2rem] border border-white/70 bg-white/78 p-5 shadow-[0_24px_90px_rgba(75,52,255,0.12)] backdrop-blur-xl md:p-8"
           style={{ '--reveal-delay': '180ms' }}
         >
-          <div className="rounded-[1.5rem] bg-[#111111] p-7 text-white">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#111111] p-7 text-white">
             <p className="text-sm text-white/55">Nossa direção</p>
 
             <h2 className="mt-16 max-w-md text-3xl font-semibold leading-tight tracking-[-0.05em] sm:text-4xl">
               Apresentar melhor. Passar confiança. Atrair novos clientes.
             </h2>
+
+            <BorderBeam
+              size={68}
+              duration={7.6}
+              colorFrom="rgba(106, 27, 255, 0.68)"
+              colorTo="rgba(32, 184, 255, 0.62)"
+            />
           </div>
 
           <div className="mt-5 grid gap-3">

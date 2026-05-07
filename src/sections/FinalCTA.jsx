@@ -1,4 +1,5 @@
 import Label from '../components/Label'
+import BorderBeam from '../components/BorderBeam'
 import { whatsappLink } from '../data/siteData'
 
 function FinalCTA() {
@@ -13,7 +14,7 @@ function FinalCTA() {
         data-reveal="right"
         className="relative mx-auto w-[min(1160px,calc(100%-32px))] rounded-[2rem] bg-white/88 p-5 shadow-[0_24px_80px_rgba(17,17,17,0.07)] backdrop-blur md:p-8"
       >
-        <div className="rounded-[1.5rem] bg-[#111111] px-6 py-14 text-center text-white md:px-12 md:py-20">
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#111111] px-6 py-14 text-center text-white md:px-12 md:py-20">
           <Label light>Próximo passo</Label>
 
           <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.055em] sm:text-4xl md:text-6xl">
@@ -33,6 +34,14 @@ function FinalCTA() {
           >
             Chamar a Rixto no WhatsApp
           </a>
+
+          <BorderBeam
+            size={86}
+            duration={8.4}
+            delay={0.4}
+            colorFrom="rgba(106, 27, 255, 0.7)"
+            colorTo="rgba(32, 184, 255, 0.62)"
+          />
         </div>
       </div>
     </section>

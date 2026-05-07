@@ -36,6 +36,39 @@ img {
   max-width: 100%;
 }
 
+.border-beam {
+  z-index: 2;
+  opacity: 0.82;
+}
+
+.border-beam__track {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--border-beam-width, 1px);
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent calc(360deg - var(--border-beam-size, 72deg)),
+      var(--border-beam-color-from, rgba(106, 27, 255, 0.72)),
+      var(--border-beam-color-to, rgba(32, 184, 255, 0.66)),
+      rgba(255, 255, 255, 0.82),
+      transparent 360deg
+    );
+  filter: saturate(1.15);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: border-beam-spin var(--border-beam-duration, 7s) linear infinite;
+  animation-delay: var(--border-beam-delay, 0s);
+}
+
 .liquid-glass-shell {
   isolation: isolate;
   background-color: rgba(255, 255, 255, 0.025);
@@ -239,6 +272,12 @@ strong {
   }
 }
 
+@keyframes border-beam-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -266,9 +305,17 @@ strong {
     opacity: 1;
     transform: none;
   }
+
+  .border-beam {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
+  .border-beam {
+    opacity: 0.62;
+  }
+
   .reveal-scope [data-reveal],
   .hero-reveal {
     transform: translate3d(0, 22px, 0);

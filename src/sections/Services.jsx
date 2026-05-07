@@ -1,4 +1,5 @@
 import Label from '../components/Label'
+import BorderBeam from '../components/BorderBeam'
 import { services } from '../data/siteData'
 
 function Services() {
@@ -36,7 +37,7 @@ function Services() {
               key={service.title}
               data-reveal={index % 2 === 0 ? 'left' : 'right'}
               style={{ '--reveal-delay': `${120 + index * 80}ms` }}
-              className="rounded-[1.8rem] border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08] hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)]"
+              className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/5 p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08] hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)]"
             >
               <span className="text-sm font-bold text-[#20B8FF]">
                 {service.number}
@@ -49,6 +50,14 @@ function Services() {
               <p className="mt-4 max-w-xl leading-7 text-white/62">
                 {service.text}
               </p>
+
+              <BorderBeam
+                size={76}
+                duration={7.2 + index * 0.55}
+                delay={index * 0.5}
+                colorFrom="rgba(106, 27, 255, 0.52)"
+                colorTo="rgba(32, 184, 255, 0.5)"
+              />
             </article>
           ))}
         </div>
