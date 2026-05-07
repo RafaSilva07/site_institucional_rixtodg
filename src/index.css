@@ -36,6 +36,11 @@ img {
   max-width: 100%;
 }
 
+.reveal-scope > section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
 .grid > *,
 .flex > * {
   min-width: 0;
@@ -55,6 +60,7 @@ strong {
 .hero-reveal {
   opacity: 0;
   transform: translate3d(0, 26px, 0);
+  backface-visibility: hidden;
   transition:
     opacity 720ms ease,
     transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -66,11 +72,11 @@ strong {
 }
 
 .reveal-scope [data-reveal='left'] {
-  transform: translate3d(-56px, 0, 0);
+  transform: translate3d(-64px, 0, 0) scale(0.985);
 }
 
 .reveal-scope [data-reveal='right'] {
-  transform: translate3d(56px, 0, 0);
+  transform: translate3d(64px, 0, 0) scale(0.985);
 }
 
 .reveal-scope [data-reveal='scale'] {
