@@ -52,11 +52,12 @@ function Services() {
               </p>
 
               <BorderBeam
-                size={76}
+                size={290}
                 duration={7.2 + index * 0.55}
                 delay={index * 0.5}
-                colorFrom="rgba(106, 27, 255, 0.52)"
-                colorTo="rgba(32, 184, 255, 0.5)"
+                borderWidth={2.5}
+                colorFrom="rgba(125, 76, 255, 0.78)"
+                colorTo="rgba(32, 184, 255, 0.76)"
               />
             </article>
           ))}

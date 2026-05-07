@@ -45,11 +45,12 @@ function Team() {
                   {person.initials}
 
                   <BorderBeam
-                    size={58}
+                    size={160}
                     duration={6.8 + index * 0.45}
                     delay={index * 0.35}
-                    colorFrom="rgba(106, 27, 255, 0.62)"
-                    colorTo="rgba(255, 255, 255, 0.64)"
+                    borderWidth={2.25}
+                    colorFrom="rgba(125, 76, 255, 0.82)"
+                    colorTo="rgba(255, 255, 255, 0.86)"
                   />
                 </div>
 

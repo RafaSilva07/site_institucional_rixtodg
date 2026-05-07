@@ -38,34 +38,30 @@ img {
 
 .border-beam {
   z-index: 2;
-  opacity: 0.82;
+  opacity: 0.95;
 }
 
-.border-beam__track {
+.border-beam__runner {
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: var(--border-beam-width, 1px);
+  left: 0;
+  top: 0;
+  width: var(--border-beam-size, 72px);
+  height: var(--border-beam-width, 1px);
   background:
-    conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent calc(360deg - var(--border-beam-size, 72deg)),
+    linear-gradient(
+      90deg,
+      transparent 0%,
       var(--border-beam-color-from, rgba(106, 27, 255, 0.72)),
       var(--border-beam-color-to, rgba(32, 184, 255, 0.66)),
-      rgba(255, 255, 255, 0.82),
-      transparent 360deg
+      rgba(255, 255, 255, 0.78),
+      transparent 100%
     );
-  filter: saturate(1.15);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  animation: border-beam-spin var(--border-beam-duration, 7s) linear infinite;
+  border-radius: 999px;
+  filter:
+    drop-shadow(0 0 8px var(--border-beam-color-to, rgba(32, 184, 255, 0.66)))
+    drop-shadow(0 0 18px rgba(106, 27, 255, 0.32));
+  transform-origin: center;
+  animation: border-beam-trace var(--border-beam-duration, 7s) linear infinite;
   animation-delay: var(--border-beam-delay, 0s);
 }
 
@@ -272,9 +268,59 @@ strong {
   }
 }
 
-@keyframes border-beam-spin {
-  to {
-    transform: rotate(1turn);
+@keyframes border-beam-trace {
+  0% {
+    left: 0;
+    top: 0;
+    transform: translate(-100%, -50%) rotate(0deg);
+  }
+
+  24% {
+    left: 100%;
+    top: 0;
+    transform: translate(0, -50%) rotate(0deg);
+  }
+
+  25% {
+    left: 100%;
+    top: 0;
+    transform: translate(-50%, -100%) rotate(90deg);
+  }
+
+  49% {
+    left: 100%;
+    top: 100%;
+    transform: translate(-50%, 0) rotate(90deg);
+  }
+
+  50% {
+    left: 100%;
+    top: 100%;
+    transform: translate(0, -50%) rotate(180deg);
+  }
+
+  74% {
+    left: 0;
+    top: 100%;
+    transform: translate(-100%, -50%) rotate(180deg);
+  }
+
+  75% {
+    left: 0;
+    top: 100%;
+    transform: translate(-50%, 0) rotate(270deg);
+  }
+
+  99% {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -100%) rotate(270deg);
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+    transform: translate(-100%, -50%) rotate(360deg);
   }
 }
 
@@ -313,7 +359,7 @@ strong {
 
 @media (max-width: 767px) {
   .border-beam {
-    opacity: 0.62;
+    opacity: 0.78;
   }
 
   .reveal-scope [data-reveal],
