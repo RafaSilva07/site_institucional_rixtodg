@@ -69,7 +69,7 @@ img {
   isolation: isolate;
   background-color: rgba(255, 255, 255, 0.025);
   backdrop-filter: url("#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
-  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: url("#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
 }
 
 .liquid-glass-shell::before {
