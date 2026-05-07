@@ -36,11 +36,12 @@ function FinalCTA() {
           </a>
 
           <BorderBeam
-            size={86}
+            size={340}
             duration={8.4}
             delay={0.4}
-            colorFrom="rgba(106, 27, 255, 0.7)"
-            colorTo="rgba(32, 184, 255, 0.62)"
+            borderWidth={2.75}
+            colorFrom="rgba(125, 76, 255, 0.88)"
+            colorTo="rgba(32, 184, 255, 0.82)"
           />
         </div>
       </div>

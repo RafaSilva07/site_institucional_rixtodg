@@ -59,7 +59,7 @@ function Hero() {
         </div>
 
         <div
-          className="hero-reveal hero-reveal-right min-w-0 rounded-[2rem] border border-white/70 bg-white/78 p-5 shadow-[0_24px_90px_rgba(75,52,255,0.12)] backdrop-blur-xl md:p-8"
+          className="hero-reveal hero-reveal-right min-w-0 overflow-hidden rounded-[2rem] border border-white/70 bg-white/78 p-5 shadow-[0_24px_90px_rgba(75,52,255,0.12)] backdrop-blur-xl md:p-8"
           style={{ '--reveal-delay': '180ms' }}
         >
           <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#111111] p-7 text-white">
@@ -70,10 +70,11 @@ function Hero() {
             </h2>
 
             <BorderBeam
-              size={68}
+              size={260}
               duration={7.6}
-              colorFrom="rgba(106, 27, 255, 0.68)"
-              colorTo="rgba(32, 184, 255, 0.62)"
+              borderWidth={2.75}
+              colorFrom="rgba(125, 76, 255, 0.88)"
+              colorTo="rgba(32, 184, 255, 0.84)"
             />
           </div>
 
@@ -97,6 +98,15 @@ function Hero() {
               style={{ '--reveal-delay': '460ms' }}
             />
           </div>
+
+          <BorderBeam
+            size={320}
+            duration={8.8}
+            delay={0.85}
+            borderWidth={2.75}
+            colorFrom="rgba(106, 27, 255, 0.68)"
+            colorTo="rgba(32, 184, 255, 0.72)"
+          />
         </div>
       </div>
     </section>
