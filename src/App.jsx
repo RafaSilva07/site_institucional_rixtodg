@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import SectionDivider from './components/SectionDivider'
+import DarkSectionStack from './components/DarkSectionStack'
 import SectionReveal from './components/SectionReveal'
 
 import Hero from './sections/Hero'
@@ -14,40 +14,42 @@ import Footer from './sections/Footer'
 
 function App() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#F5F5F7] pt-24 text-[#111111] md:pt-28">
+    <main className="min-h-screen overflow-x-clip bg-[#F5F5F7] pt-24 text-[#111111] md:pt-28">
       <Header />
 
-      <Hero />
-      <SectionDivider variant="lightToDark" />
+      <DarkSectionStack previous={<Hero />}>
+        <SectionReveal>
+          <About />
+        </SectionReveal>
+      </DarkSectionStack>
 
-      <SectionReveal>
-        <About />
-      </SectionReveal>
-      <SectionDivider variant="darkToLight" />
-
-      <SectionReveal>
-        <Team />
-      </SectionReveal>
-      <SectionDivider variant="lightToDark" />
-
-      <SectionReveal>
-        <Services />
-      </SectionReveal>
-      <SectionDivider variant="darkToLight" />
+      <DarkSectionStack
+        previous={
+          <SectionReveal>
+            <Team />
+          </SectionReveal>
+        }
+      >
+        <SectionReveal>
+          <Services />
+        </SectionReveal>
+      </DarkSectionStack>
 
       <SectionReveal>
         <Projects />
       </SectionReveal>
 
-      <SectionReveal>
-        <Process />
-      </SectionReveal>
-      <SectionDivider variant="lightToDark" />
-
-      <SectionReveal>
-        <Pillars />
-      </SectionReveal>
-      <SectionDivider variant="darkToLight" />
+      <DarkSectionStack
+        previous={
+          <SectionReveal>
+            <Process />
+          </SectionReveal>
+        }
+      >
+        <SectionReveal>
+          <Pillars />
+        </SectionReveal>
+      </DarkSectionStack>
 
       <SectionReveal>
         <FinalCTA />
