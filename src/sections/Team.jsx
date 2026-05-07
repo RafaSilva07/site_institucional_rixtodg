@@ -1,4 +1,5 @@
 import Label from '../components/Label'
+import BorderBeam from '../components/BorderBeam'
 import { team } from '../data/siteData'
 
 function Team() {
@@ -40,8 +41,16 @@ function Team() {
               className="group rounded-[1.8rem] border border-white/70 bg-white/78 p-7 shadow-[0_22px_80px_rgba(75,52,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_26px_90px_rgba(75,52,255,0.14)]"
             >
               <div className="flex flex-col gap-6 sm:flex-row">
-                <div className="grid size-20 shrink-0 place-items-center rounded-3xl bg-[#111111] text-xl font-semibold text-white transition duration-300 group-hover:bg-[#4B34FF]">
+                <div className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-[#111111] text-xl font-semibold text-white transition duration-300 group-hover:bg-[#4B34FF]">
                   {person.initials}
+
+                  <BorderBeam
+                    size={58}
+                    duration={6.8 + index * 0.45}
+                    delay={index * 0.35}
+                    colorFrom="rgba(106, 27, 255, 0.62)"
+                    colorTo="rgba(255, 255, 255, 0.64)"
+                  />
                 </div>
 
                 <div>
