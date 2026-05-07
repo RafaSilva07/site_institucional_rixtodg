@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 132px;
+  scroll-padding-top: 112px;
   overflow-x: clip;
 }
 
@@ -34,6 +34,62 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.liquid-glass-shell {
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: url("#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+}
+
+.liquid-glass-shell::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 25%),
+    linear-gradient(88deg, transparent 0 20%, rgba(255, 255, 255, 0.16) 37%, transparent 54%),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.48), transparent 28%),
+    radial-gradient(circle at 82% 100%, rgba(75, 52, 255, 0.08), transparent 35%),
+    radial-gradient(circle at 96% 18%, rgba(32, 184, 255, 0.075), transparent 28%);
+  mix-blend-mode: screen;
+}
+
+.liquid-glass-shell::after {
+  position: absolute;
+  inset: 1px;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  content: "";
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -30px 42px rgba(17, 17, 17, 0.032),
+    inset 24px 0 44px rgba(255, 255, 255, 0.11),
+    inset -20px 0 36px rgba(75, 52, 255, 0.045);
+}
+
+.liquid-glass-surface {
+  z-index: 0;
+  opacity: 0.32;
+  background:
+    linear-gradient(112deg, transparent 0 14%, rgba(255, 255, 255, 0.26) 31%, transparent 49%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.22), transparent 42%),
+    radial-gradient(circle at 92% 64%, rgba(32, 184, 255, 0.07), transparent 28%);
+}
+
+.liquid-glass-caustic {
+  z-index: 0;
+  opacity: 0.28;
+  background:
+    linear-gradient(100deg, transparent 4%, rgba(255, 255, 255, 0.09) 15%, transparent 26%),
+    linear-gradient(78deg, transparent 54%, rgba(75, 52, 255, 0.055) 65%, transparent 78%),
+    radial-gradient(ellipse at 42% 48%, rgba(255, 255, 255, 0.14), transparent 34%);
+  filter: blur(0.4px) saturate(1.15);
 }
 
 .reveal-scope > section {
@@ -186,6 +242,14 @@ strong {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .liquid-glass-surface {
+    filter: none;
+  }
+
+  .liquid-glass-caustic {
+    filter: none;
   }
 
   *,
