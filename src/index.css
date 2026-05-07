@@ -63,20 +63,20 @@ img {
   background-color: #111111;
 }
 
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .dark-section-stack__base {
     position: sticky;
     top: 0;
   }
 
   .dark-section-stack__overlay {
-    min-height: min(100svh, 820px);
+    min-height: 100svh;
     overflow: clip;
     box-shadow: 0 -34px 80px rgba(0, 0, 0, 0.22);
   }
 
   .dark-section-stack__overlay > .reveal-scope > section {
-    min-height: min(100svh, 820px);
+    min-height: 100svh;
   }
 }
 
