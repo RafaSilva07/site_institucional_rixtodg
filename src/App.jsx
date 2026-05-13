@@ -24,6 +24,7 @@ function App() {
       </DarkSectionStack>
 
       <DarkSectionStack
+        disableParallax
         previous={
           <SectionReveal>
             <Team />
