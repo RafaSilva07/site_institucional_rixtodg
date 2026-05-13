@@ -68,8 +68,8 @@ img {
 .liquid-glass-shell {
   isolation: isolate;
   background-color: rgba(255, 255, 255, 0.025);
-  backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
-  -webkit-backdrop-filter: url("/liquid-glass-filter.svg#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
+  backdrop-filter: url("#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
+  -webkit-backdrop-filter: url("#liquid-glass-header") blur(0.6px) saturate(1.45) contrast(1.08);
 }
 
 .liquid-glass-shell::before {
@@ -162,6 +162,20 @@ img {
 
   .dark-section-stack__overlay > .reveal-scope > section {
     min-height: 100svh;
+  }
+
+  .dark-section-stack--no-parallax .dark-section-stack__base {
+    position: relative;
+    top: auto;
+  }
+
+  .dark-section-stack--no-parallax .dark-section-stack__overlay {
+    min-height: auto;
+    box-shadow: none;
+  }
+
+  .dark-section-stack--no-parallax .dark-section-stack__overlay > .reveal-scope > section {
+    min-height: auto;
   }
 }
 
